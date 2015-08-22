@@ -1,0 +1,48 @@
+<head>
+    <title>instagram-meteor</title>
+</head>
+
+<body>
+<h1>Welcome to Meter Update</h1>
+{{> loginButtons}}
+<!--<div id="instafeed"></div>-->
+<br/>
+<hr/>
+{{test}}
+
+<form class="new-pic">
+<input type="text" name="url" placeholder="enter the pic url" />
+<input type="text" name="title" placeholder="title">
+    <button class="button-default" type="submit">Submit</button>
+</form>
+
+<div class="container">
+<ul class="polaroids">
+    {{#each fotos}}
+        {{> photo}}
+    {{/each}}
+</ul>
+</div>
+
+{{> instafeed}}
+
+</body>
+
+
+
+<template name="photo">
+    <li>
+        <a href="{{url}}" title="{{title}}">
+            <img class="img50" alt="{{title}}" src="{{photo_url}}">
+        </a>
+    </li>
+</template>
+
+
+<template name="instafeed">
+    <!--<div class="sticky">-->
+        <!--<label for="tagValue"><p>New Feed:</p></label>-->
+        <!--<input class="style-5" type="text" id="tagValue" placeholder="#">-->
+    <!--</div>-->
+    <ul id="instafeed" class="polaroids"></ul>
+</template>
